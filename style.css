@@ -10,15 +10,15 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top left, #7b2ff7, #0b0d1a 50%);
+  background: radial-gradient(circle at top left, #7b2ff7, #0b0d1a 55%);
   color: #fff;
 }
 
-/* Header */
+/* HEADER */
 header {
   position: fixed;
   width: 100%;
-  background: rgba(10,10,30,0.6);
+  background: rgba(10,10,30,0.65);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
@@ -54,7 +54,7 @@ nav a:hover {
   opacity: 1;
 }
 
-/* Hero */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -71,7 +71,7 @@ nav a:hover {
 
 .hero-text p {
   margin: 20px 0;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .btn {
@@ -84,7 +84,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-/* Visual */
+/* HERO VISUAL */
 .hero-visual {
   display: flex;
   justify-content: center;
@@ -94,7 +94,7 @@ nav a:hover {
   width: 280px;
   height: 280px;
   background: linear-gradient(135deg, #7b2ff7, #00c6ff);
-  border-radius: 20px;
+  border-radius: 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,6 +103,7 @@ nav a:hover {
   box-shadow: 0 0 60px rgba(123,47,247,0.6);
 }
 
+/* SECTIONS */
 .section {
   padding: 120px 10%;
   text-align: center;
@@ -117,38 +118,61 @@ nav a:hover {
   margin-bottom: 20px;
 }
 
+/* PORTFOLIO */
 .portfolio-grid {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
-/* link vira o “container clicável” */
 .project-link {
-  display: block;
-  border-radius: 16px;
-  overflow: hidden;
   text-decoration: none;
   color: inherit;
 }
 
 .project {
+  aspect-ratio: 1 / 1;
   background: linear-gradient(135deg, #1a1d3a, #0b0d1a);
-  padding: 30px;
-  border-radius: 16px;
-  text-align: left;
-  height: 100%;
-  transition: transform .3s, box-shadow .3s;
+  border-radius: 22px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-/* hover aplicado corretamente */
+.project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(123,47,247,.45), transparent 60%);
+  opacity: 0;
+  transition: opacity .4s;
+}
+
 .project-link:hover .project {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(123,47,247,0.35);
 }
 
-/* WhatsApp */
+.project-link:hover .project::before {
+  opacity: 1;
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.project p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* WHATSAPP */
 .btn-whatsapp {
   display: inline-block;
   margin-top: 30px;
@@ -160,7 +184,7 @@ nav a:hover {
   background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   padding: 40px;
   background: #050612;
@@ -186,6 +210,12 @@ footer {
 }
 
 /* 📱 RESPONSIVO */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
 
   .menu-toggle {
@@ -218,8 +248,11 @@ footer {
     font-size: 2rem;
   }
 
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 🔥 um abaixo do outro no mobile */
+  }
+
   .section {
     padding: 80px 20px;
   }
-
 }
