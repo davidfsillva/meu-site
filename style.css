@@ -354,7 +354,7 @@ footer {
     flex-direction: column;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 20px 40px var(--text-main);
+    box-shadow: 0 20px 40px var(--text-mai);
 
 
   }
@@ -368,6 +368,11 @@ footer {
     padding: 15px 20px;
     margin: 0;
     text-align: center;
+    border-bottom: 1px solid #b4b4b4; 
+  }
+
+  nav a:last-child {
+    border-bottom: none;
   }
 
   .hero {
