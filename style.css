@@ -122,9 +122,11 @@ nav a:hover {
 .portfolio-grid {
   margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  justify-items: center;
 }
+
 
 .project-link {
   text-decoration: none;
@@ -138,10 +140,12 @@ nav a:hover {
   padding: 25px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   overflow: hidden;
   transition: transform .4s ease, box-shadow .4s ease;
+  width: 350px;
+  height: 200px;
 }
 
 .project::before {
@@ -191,6 +195,8 @@ footer {
   text-align: center;
 }
 
+
+
 .social {
   margin-top: 15px;
   display: flex;
@@ -207,6 +213,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: #fff;
+  text-decoration: none;
 }
 
 /* 📱 RESPONSIVO */
