@@ -349,12 +349,12 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background: #0b0d1a;
+    background: rgba(255, 255, 255, 0.75);
     display: none;
     flex-direction: column;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.75);
+    box-shadow: 0 20px 40px var(--text-main);
 
 
   }
