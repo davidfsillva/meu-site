@@ -349,7 +349,7 @@ footer {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.75);
+    background: var(--bg-main);
     display: none;
     flex-direction: column;
     padding: 10px 0;
