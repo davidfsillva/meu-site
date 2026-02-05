@@ -346,6 +346,7 @@ footer {
 
   nav {
     position: absolute;
+    color: var(--text-main);
     top: 100%;
     left: 0;
     width: 100%;
