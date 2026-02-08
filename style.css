@@ -225,71 +225,46 @@ nav a:hover {
   justify-items: center;
 }
 
-
 .project-link {
   text-decoration: none;
   color: inherit;
 }
 
+/* Card */
 .project {
-  background: #ffffff;
   width: 350px;
-  height: 200px;
   border-radius: 22px;
-  padding: 25px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  overflow: hidden;
+}
 
+/* Imagem do projeto */
+.project-image {
+  height: 200px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  color: var(--bg-main);
-  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
-  text-shadow: 0 2px 6px rgba(11, 13, 26, 0.6);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
-.project::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #531bee, #00c6ff);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
+/* Texto abaixo da imagem */
+.project-info {
+  padding: 20px;
+  text-align: left;
 }
 
-
-.project-link:hover .project {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25);
+.project-info h3 {
+  margin-bottom: 8px;
+  color: var(--text-main);
+  font-size: 1.2rem;
 }
 
-.project-link:hover .project::before {
-  opacity: 1;
-}
-
-.project h3,
-.project p {
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-
-.project-link:hover .project h3,
-.project-link:hover .project p {
-  opacity: 1;
-  transform: translateY(0);
-  color: var(--bg-main);
+.project-info p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 /* WHATSAPP */
@@ -352,7 +327,8 @@ footer {
     display: block;
     font-size: 26px;
     cursor: pointer;
-    z-index: 1100;  }
+    z-index: 1100;
+  }
 
   nav {
     position: absolute;
@@ -364,9 +340,7 @@ footer {
     flex-direction: column;
     padding: 10px 0;
     z-index: 1000;
-    box-shadow: 0 20px 40px var(--text-mai);
-
-
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
 
   nav.active {
@@ -396,27 +370,43 @@ footer {
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr; /* 🔥 um abaixo do outro no mobile */
+    grid-template-columns: 1fr; /* cards um abaixo do outro */
+    gap: 20px;
   }
 
   .section {
     padding: 80px 20px;
   }
 
-    .glow-card {
+  .glow-card {
     width: 100%;
     max-width: 340px;
     margin: 0 auto;
   }
 
+  /* ===== PORTFOLIO MOBILE ===== */
+  .project {
+    height: auto; /* altura automática para caber a imagem e texto */
+    padding: 0;   /* remover padding interno, o texto está no .project-info */
+  }
+
+  .project-image {
+    height: 200px; /* altura fixa para a imagem */
+  }
+
+  .project-info {
+    padding: 15px 20px;
+  }
+
+  /* Remover overlay azul do mobile */
+  .project::before {
+    display: none;
+  }
+
+  /* Texto visível normalmente */
   .project h3,
   .project p {
-  opacity: 1;
-  transform: none;
-}
-
-.project::before {
-  opacity: 1;
-}
-
+    opacity: 1;
+    transform: none;
+  }
 }
