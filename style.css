@@ -410,13 +410,16 @@ footer {
   }
 
   .project h3,
-.project p {
-  opacity: 1;
-  transform: none;
-}
+  .project p {
+  background: rgba(255,255,255,0.9);
+  color: var(--text-main);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  }
 
-.project::before {
-  opacity: 1;
+  .project::before {
+  opacity: 0.3;
 }
 
 }
