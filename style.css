@@ -235,7 +235,7 @@ nav a:hover {
   width: 350px;
   border-radius: 22px;
   overflow: hidden;
-  background: #fff;
+  background: linear-gradient(90deg, #531bee, #00c6ff);
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
